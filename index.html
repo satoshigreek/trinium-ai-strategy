@@ -214,30 +214,62 @@
         /* --- PDF --- */
         .pdf-section { border-top: 1px solid #1a2545; }
 
-        .pdf-viewer {
-            width: 100%;
-            height: 700px;
-            border: none;
+        .pdf-card {
+            background: linear-gradient(135deg, #111827 0%, #162038 100%);
+            border: 1px solid #1e2d4a;
             border-radius: 12px;
-            background: #1a1a2e;
+            padding: 40px;
+            text-align: center;
         }
 
-        .pdf-download {
+        .pdf-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .pdf-card h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .pdf-card p {
+            color: #6b8bb5;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .pdf-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pdf-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 16px;
-            background: linear-gradient(135deg, #4a90d9, #2a5a9a);
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
             transition: opacity 0.2s;
         }
 
-        .pdf-download:hover { opacity: 0.85; }
+        .pdf-btn:hover { opacity: 0.85; }
+
+        .pdf-btn-primary {
+            background: linear-gradient(135deg, #4a90d9, #2a5a9a);
+        }
+
+        .pdf-btn-secondary {
+            background: transparent;
+            border: 2px solid #2a5a9a;
+            color: #7bb3e8;
+        }
 
         /* --- FOOTER --- */
         footer {
@@ -364,11 +396,19 @@
     <section id="dossier" class="section pdf-section">
         <h2 class="section-title">2026 Strategic AI Dossier</h2>
         <p class="section-subtitle">Full 14-page strategic report</p>
-        <iframe class="pdf-viewer" src="assets/2026_Strategic_AI_Dossier.pdf" title="2026 Strategic AI Dossier PDF"></iframe>
-        <br>
-        <a href="assets/2026_Strategic_AI_Dossier.pdf" download class="pdf-download">
-            &#8681; Download Full Dossier (PDF)
-        </a>
+        <div class="pdf-card">
+            <div class="pdf-icon">&#128196;</div>
+            <h3>2026_Strategic_AI_Dossier.pdf</h3>
+            <p>14-page strategic report &mdash; 12 MB</p>
+            <div class="pdf-actions">
+                <a href="assets/2026_Strategic_AI_Dossier.pdf" target="_blank" class="pdf-btn pdf-btn-primary">
+                    &#9654; View PDF
+                </a>
+                <a href="assets/2026_Strategic_AI_Dossier.pdf" download class="pdf-btn pdf-btn-secondary">
+                    &#8681; Download PDF
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
