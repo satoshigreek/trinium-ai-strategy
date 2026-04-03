@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odyssey Works | Trinium AI - 2026 Strategic AI Dossier</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0e1a;
+            color: #e0e6f0;
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: linear-gradient(135deg, #0d1329 0%, #1a2550 100%);
+            border-bottom: 2px solid #1e3a6d;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ow-logo {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .ow-logo span {
+            color: #4a90d9;
+        }
+
+        .divider {
+            width: 2px;
+            height: 36px;
+            background: #2a4070;
+        }
+
+        .ow-logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .trinium-text {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .trinium-text span {
+            color: #4a90d9;
+        }
+
+        nav a {
+            color: #8aa8d0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 24px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: #ffffff; }
+
+        /* --- HERO --- */
+        .hero {
+            background: linear-gradient(180deg, #0d1329 0%, #0f1a35 50%, #0a0e1a 100%);
+            text-align: center;
+            padding: 80px 24px 60px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(90deg, #4a90d9, #7bb3e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #8aa8d0;
+            max-width: 680px;
+            margin: 0 auto 32px;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(74, 144, 217, 0.15);
+            border: 1px solid #2a5a9a;
+            color: #7bb3e8;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* --- SECTIONS --- */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: #6b8bb5;
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1e2d4a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* --- VIDEO --- */
+        .video-section { border-top: 1px solid #1a2545; }
+
+        .video-section video {
+            width: 100%;
+            border-radius: 12px;
+            background: #000;
+        }
+
+        /* --- AUDIO --- */
+        .audio-section { border-top: 1px solid #1a2545; }
+
+        .audio-card {
+            background: linear-gradient(135deg, #111827 0%, #162038 100%);
+            border: 1px solid #1e2d4a;
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .audio-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #4a90d9, #2a5a9a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .audio-info { flex: 1; min-width: 200px; }
+
+        .audio-info h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .audio-info p {
+            color: #6b8bb5;
+            font-size: 14px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            height: 42px;
+        }
+
+        /* --- PDF --- */
+        .pdf-section { border-top: 1px solid #1a2545; }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 12px;
+            background: #1a1a2e;
+        }
+
+        .pdf-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            background: linear-gradient(135deg, #4a90d9, #2a5a9a);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .pdf-download:hover { opacity: 0.85; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #060912;
+            border-top: 1px solid #1a2545;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .footer-brand img { height: 36px; }
+
+        .footer-brand span {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .disclaimer {
+            background: rgba(255, 50, 50, 0.06);
+            border: 1px solid #3d1a1a;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer h4 {
+            color: #e85555;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .disclaimer p {
+            color: #9aa0b0;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .copyright {
+            color: #4a5568;
+            font-size: 12px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .header-inner { justify-content: center; text-align: center; }
+            nav { width: 100%; text-align: center; }
+            nav a { margin: 0 12px; }
+            .hero { padding: 50px 16px 40px; }
+            .audio-card { flex-direction: column; text-align: center; }
+            audio { max-width: 100%; }
+            .pdf-viewer { height: 450px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="brand">
+                <img src="assets/odyssey_works_logo.png" alt="Odyssey Works" class="ow-logo-img">
+                <div class="ow-logo"><span>ODYSSEY</span> WORKS</div>
+                <div class="divider"></div>
+                <div class="trinium-text"><span>TRINIUM</span> AI</div>
+            </div>
+            <nav>
+                <a href="#video">Video</a>
+                <a href="#audio">Audio</a>
+                <a href="#dossier">Dossier</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="badge">Confidential Strategy Document</div>
+        <h1 style="margin-top: 24px;">Navigating the 2026 <em>AI Transformation</em></h1>
+        <p>From Tools to Autonomous Services &mdash; Odyssey Works' strategic framework for Trinium AI, covering infrastructure, governance, and the shift to outcome-based pricing.</p>
+    </section>
+
+    <!-- VIDEO -->
+    <section id="video" class="section video-section">
+        <h2 class="section-title">The AI Worker: 2026 Playbook</h2>
+        <p class="section-subtitle">Video briefing on the autonomous worker paradigm</p>
+        <video controls preload="metadata" poster="">
+            <source src="assets/The_AI_Worker__2026_Playbook.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </section>
+
+    <!-- AUDIO -->
+    <section id="audio" class="section audio-section">
+        <h2 class="section-title">Audio Briefing</h2>
+        <p class="section-subtitle">Listen to the full strategic analysis</p>
+        <div class="audio-card">
+            <div class="audio-icon">&#9835;</div>
+            <div class="audio-info">
+                <h3>Software Is the New Autonomous Worker</h3>
+                <p>Deep-dive audio companion to the 2026 Strategic AI Dossier</p>
+            </div>
+            <audio controls preload="metadata">
+                <source src="assets/Software_Is_the_New_Autonomous_Worker.m4a" type="audio/mp4">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <!-- PDF DOSSIER -->
+    <section id="dossier" class="section pdf-section">
+        <h2 class="section-title">2026 Strategic AI Dossier</h2>
+        <p class="section-subtitle">Full 14-page strategic report</p>
+        <iframe class="pdf-viewer" src="assets/2026_Strategic_AI_Dossier.pdf" title="2026 Strategic AI Dossier PDF"></iframe>
+        <br>
+        <a href="assets/2026_Strategic_AI_Dossier.pdf" download class="pdf-download">
+            &#8681; Download Full Dossier (PDF)
+        </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="assets/odyssey_works_logo.png" alt="Odyssey Works">
+                <span>ODYSSEY WORKS &nbsp;|&nbsp; TRINIUM AI</span>
+            </div>
+            <div class="disclaimer">
+                <h4>Disclaimer &amp; Confidentiality Notice</h4>
+                <p>
+                    All content, materials, media, and intellectual property presented on this website &mdash; including but not limited to documents, videos, audio recordings, graphics, and strategic analyses &mdash; are the exclusive property of <strong>Odyssey Works, Inc.</strong> and <strong>Trinium AI</strong>.
+                    These materials are strictly confidential and intended solely for authorized recipients.
+                    Unauthorized reproduction, distribution, transmission, display, or any form of sharing of this content, in whole or in part, is strictly prohibited without prior written permission from Odyssey Works, Inc.
+                    Any unauthorized use may result in legal action.
+                </p>
+            </div>
+            <p class="copyright">&copy; 2026 Odyssey Works, Inc. All Rights Reserved. | This material can only be shared upon explicit permission by Odyssey Works.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
