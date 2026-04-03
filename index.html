@@ -218,31 +218,60 @@
             background: linear-gradient(135deg, #111827 0%, #162038 100%);
             border: 1px solid #1e2d4a;
             border-radius: 12px;
-            padding: 40px;
-            text-align: center;
+            padding: 36px 40px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
         }
 
-        .pdf-icon {
-            font-size: 64px;
-            margin-bottom: 16px;
+        .pdf-icon-wrap {
+            width: 80px;
+            height: 96px;
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(229, 62, 62, 0.25);
         }
 
-        .pdf-card h3 {
+        .pdf-icon-wrap span {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .pdf-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .pdf-info h3 {
             color: #ffffff;
             font-size: 20px;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            font-weight: 600;
         }
 
-        .pdf-card p {
+        .pdf-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 0;
+        }
+
+        .pdf-meta span {
             color: #6b8bb5;
-            font-size: 14px;
-            margin-bottom: 28px;
+            font-size: 13px;
         }
 
         .pdf-actions {
             display: flex;
-            gap: 16px;
-            justify-content: center;
+            gap: 12px;
+            flex-shrink: 0;
             flex-wrap: wrap;
         }
 
@@ -252,22 +281,23 @@
             gap: 8px;
             color: #ffffff;
             text-decoration: none;
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 15px;
-            transition: opacity 0.2s;
+            font-size: 14px;
+            transition: all 0.2s;
         }
 
-        .pdf-btn:hover { opacity: 0.85; }
+        .pdf-btn:hover { transform: translateY(-1px); }
 
         .pdf-btn-primary {
             background: linear-gradient(135deg, #4a90d9, #2a5a9a);
+            box-shadow: 0 2px 12px rgba(74, 144, 217, 0.3);
         }
 
         .pdf-btn-secondary {
-            background: transparent;
-            border: 2px solid #2a5a9a;
+            background: rgba(74, 144, 217, 0.1);
+            border: 1px solid #2a5a9a;
             color: #7bb3e8;
         }
 
@@ -397,15 +427,21 @@
         <h2 class="section-title">2026 Strategic AI Dossier</h2>
         <p class="section-subtitle">Full 14-page strategic report</p>
         <div class="pdf-card">
-            <div class="pdf-icon">&#128196;</div>
-            <h3>2026_Strategic_AI_Dossier.pdf</h3>
-            <p>14-page strategic report &mdash; 12 MB</p>
+            <div class="pdf-icon-wrap"><span>PDF</span></div>
+            <div class="pdf-info">
+                <h3>2026 Strategic AI Dossier</h3>
+                <div class="pdf-meta">
+                    <span>14 pages</span>
+                    <span>12 MB</span>
+                    <span>Confidential</span>
+                </div>
+            </div>
             <div class="pdf-actions">
                 <a href="assets/2026_Strategic_AI_Dossier.pdf" target="_blank" class="pdf-btn pdf-btn-primary">
-                    &#9654; View PDF
+                    View PDF
                 </a>
                 <a href="assets/2026_Strategic_AI_Dossier.pdf" download class="pdf-btn pdf-btn-secondary">
-                    &#8681; Download PDF
+                    Download
                 </a>
             </div>
         </div>
